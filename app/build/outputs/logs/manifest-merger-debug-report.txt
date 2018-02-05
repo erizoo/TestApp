@@ -1,0 +1,75 @@
+-- Merging decision tree log ---
+manifest
+ADDED from C:\Users\Erizo\Downloads\app\src\main\AndroidManifest.xml:1:1-11:12
+INJECTED from C:\Users\Erizo\Downloads\app\src\main\AndroidManifest.xml:1:1-11:12
+INJECTED from C:\Users\Erizo\Downloads\app\src\main\AndroidManifest.xml:1:1-11:12
+INJECTED from C:\Users\Erizo\Downloads\app\src\main\AndroidManifest.xml:1:1-11:12
+MERGED from [com.android.support:appcompat-v7:27.0.2] C:\Users\Erizo\.gradle\caches\transforms-1\files-1.1\appcompat-v7-27.0.2.aar\cdfdfd0e098fba328604418873af89b7\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-fragment:27.0.2] C:\Users\Erizo\.gradle\caches\transforms-1\files-1.1\support-fragment-27.0.2.aar\7745c6c1a59253fa7a1726b5bba585c8\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-core-utils:27.0.2] C:\Users\Erizo\.gradle\caches\transforms-1\files-1.1\support-core-utils-27.0.2.aar\4ea3e9e605af01376a3f17e76c285ee6\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:animated-vector-drawable:27.0.2] C:\Users\Erizo\.gradle\caches\transforms-1\files-1.1\animated-vector-drawable-27.0.2.aar\61949f8102ad0419963a3af4075f45bc\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-vector-drawable:27.0.2] C:\Users\Erizo\.gradle\caches\transforms-1\files-1.1\support-vector-drawable-27.0.2.aar\c49f885d77c317b79b8251f887a9418c\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-core-ui:27.0.2] C:\Users\Erizo\.gradle\caches\transforms-1\files-1.1\support-core-ui-27.0.2.aar\ca239c807f7419602afb9834958c1d60\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-compat:27.0.2] C:\Users\Erizo\.gradle\caches\transforms-1\files-1.1\support-compat-27.0.2.aar\771596cd0193c6e02eaad4411e2bfdec\AndroidManifest.xml:17:1-22:12
+MERGED from [android.arch.lifecycle:runtime:1.0.3] C:\Users\Erizo\.gradle\caches\transforms-1\files-1.1\runtime-1.0.3.aar\bdcc8abc503106ed66851cbb815f28ed\AndroidManifest.xml:17:1-24:12
+INJECTED from C:\Users\Erizo\Downloads\app\src\main\AndroidManifest.xml:1:1-11:12
+INJECTED from C:\Users\Erizo\Downloads\app\src\main\AndroidManifest.xml:1:1-11:12
+INJECTED from C:\Users\Erizo\Downloads\app\src\main\AndroidManifest.xml:1:1-11:12
+	package
+		ADDED from C:\Users\Erizo\Downloads\app\src\main\AndroidManifest.xml:2:5-32
+		INJECTED from C:\Users\Erizo\Downloads\app\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\Erizo\Downloads\app\src\main\AndroidManifest.xml
+	android:versionName
+		INJECTED from C:\Users\Erizo\Downloads\app\src\main\AndroidManifest.xml
+		ADDED from C:\Users\Erizo\Downloads\app\src\main\AndroidManifest.xml:1:1-11:12
+		INJECTED from C:\Users\Erizo\Downloads\app\src\main\AndroidManifest.xml
+	android:versionCode
+		INJECTED from C:\Users\Erizo\Downloads\app\src\main\AndroidManifest.xml
+		ADDED from C:\Users\Erizo\Downloads\app\src\main\AndroidManifest.xml:1:1-11:12
+		INJECTED from C:\Users\Erizo\Downloads\app\src\main\AndroidManifest.xml
+	xmlns:android
+		ADDED from C:\Users\Erizo\Downloads\app\src\main\AndroidManifest.xml:1:11-69
+application
+ADDED from C:\Users\Erizo\Downloads\app\src\main\AndroidManifest.xml:4:5-10:43
+	android:supportsRtl
+		ADDED from C:\Users\Erizo\Downloads\app\src\main\AndroidManifest.xml:9:9-35
+	android:label
+		ADDED from C:\Users\Erizo\Downloads\app\src\main\AndroidManifest.xml:7:9-41
+	android:roundIcon
+		ADDED from C:\Users\Erizo\Downloads\app\src\main\AndroidManifest.xml:8:9-54
+	android:icon
+		ADDED from C:\Users\Erizo\Downloads\app\src\main\AndroidManifest.xml:6:9-43
+	android:allowBackup
+		ADDED from C:\Users\Erizo\Downloads\app\src\main\AndroidManifest.xml:5:9-35
+	android:theme
+		ADDED from C:\Users\Erizo\Downloads\app\src\main\AndroidManifest.xml:10:9-40
+uses-sdk
+INJECTED from C:\Users\Erizo\Downloads\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
+INJECTED from C:\Users\Erizo\Downloads\app\src\main\AndroidManifest.xml
+INJECTED from C:\Users\Erizo\Downloads\app\src\main\AndroidManifest.xml
+MERGED from [com.android.support:appcompat-v7:27.0.2] C:\Users\Erizo\.gradle\caches\transforms-1\files-1.1\appcompat-v7-27.0.2.aar\cdfdfd0e098fba328604418873af89b7\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:appcompat-v7:27.0.2] C:\Users\Erizo\.gradle\caches\transforms-1\files-1.1\appcompat-v7-27.0.2.aar\cdfdfd0e098fba328604418873af89b7\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-fragment:27.0.2] C:\Users\Erizo\.gradle\caches\transforms-1\files-1.1\support-fragment-27.0.2.aar\7745c6c1a59253fa7a1726b5bba585c8\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-fragment:27.0.2] C:\Users\Erizo\.gradle\caches\transforms-1\files-1.1\support-fragment-27.0.2.aar\7745c6c1a59253fa7a1726b5bba585c8\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-core-utils:27.0.2] C:\Users\Erizo\.gradle\caches\transforms-1\files-1.1\support-core-utils-27.0.2.aar\4ea3e9e605af01376a3f17e76c285ee6\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-core-utils:27.0.2] C:\Users\Erizo\.gradle\caches\transforms-1\files-1.1\support-core-utils-27.0.2.aar\4ea3e9e605af01376a3f17e76c285ee6\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:animated-vector-drawable:27.0.2] C:\Users\Erizo\.gradle\caches\transforms-1\files-1.1\animated-vector-drawable-27.0.2.aar\61949f8102ad0419963a3af4075f45bc\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:animated-vector-drawable:27.0.2] C:\Users\Erizo\.gradle\caches\transforms-1\files-1.1\animated-vector-drawable-27.0.2.aar\61949f8102ad0419963a3af4075f45bc\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-vector-drawable:27.0.2] C:\Users\Erizo\.gradle\caches\transforms-1\files-1.1\support-vector-drawable-27.0.2.aar\c49f885d77c317b79b8251f887a9418c\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-vector-drawable:27.0.2] C:\Users\Erizo\.gradle\caches\transforms-1\files-1.1\support-vector-drawable-27.0.2.aar\c49f885d77c317b79b8251f887a9418c\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-core-ui:27.0.2] C:\Users\Erizo\.gradle\caches\transforms-1\files-1.1\support-core-ui-27.0.2.aar\ca239c807f7419602afb9834958c1d60\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-core-ui:27.0.2] C:\Users\Erizo\.gradle\caches\transforms-1\files-1.1\support-core-ui-27.0.2.aar\ca239c807f7419602afb9834958c1d60\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-compat:27.0.2] C:\Users\Erizo\.gradle\caches\transforms-1\files-1.1\support-compat-27.0.2.aar\771596cd0193c6e02eaad4411e2bfdec\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-compat:27.0.2] C:\Users\Erizo\.gradle\caches\transforms-1\files-1.1\support-compat-27.0.2.aar\771596cd0193c6e02eaad4411e2bfdec\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:runtime:1.0.3] C:\Users\Erizo\.gradle\caches\transforms-1\files-1.1\runtime-1.0.3.aar\bdcc8abc503106ed66851cbb815f28ed\AndroidManifest.xml:20:5-22:41
+MERGED from [android.arch.lifecycle:runtime:1.0.3] C:\Users\Erizo\.gradle\caches\transforms-1\files-1.1\runtime-1.0.3.aar\bdcc8abc503106ed66851cbb815f28ed\AndroidManifest.xml:20:5-22:41
+INJECTED from C:\Users\Erizo\Downloads\app\src\main\AndroidManifest.xml
+INJECTED from C:\Users\Erizo\Downloads\app\src\main\AndroidManifest.xml
+	android:targetSdkVersion
+		INJECTED from C:\Users\Erizo\Downloads\app\src\main\AndroidManifest.xml
+		ADDED from C:\Users\Erizo\Downloads\app\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\Erizo\Downloads\app\src\main\AndroidManifest.xml
+	android:minSdkVersion
+		INJECTED from C:\Users\Erizo\Downloads\app\src\main\AndroidManifest.xml
+		ADDED from C:\Users\Erizo\Downloads\app\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\Erizo\Downloads\app\src\main\AndroidManifest.xml
