@@ -8,13 +8,13 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme" >
-        <activity android:name=".classwork1.MainActivity" android:screenOrientation="locked">
+        <activity android:name=".MainActivity" android:screenOrientation="locked">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".classwork1.HomeWork1Activity" />
-        <activity android:name=".classwork1.HomeWork2Activity" />
+        <activity android:name=".hw1.HomeWork1Activity" />
+        <activity android:name=".hw2.HomeWork2Activity" />
     </application>
 </manifest>

@@ -1,4 +1,4 @@
-package com.erizo.testapp.classwork1;
+package com.erizo.testapp;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;

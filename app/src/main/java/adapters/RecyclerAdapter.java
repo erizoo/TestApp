@@ -9,8 +9,8 @@ import android.view.ViewGroup;
 import android.widget.Button;
 
 import com.erizo.testapp.R;
-import com.erizo.testapp.classwork1.HomeWork1Activity;
-import com.erizo.testapp.classwork1.HomeWork2Activity;
+import com.erizo.testapp.hw1.HomeWork1Activity;
+import com.erizo.testapp.hw2.HomeWork2Activity;
 
 /**
  * Created by Erizo on 07.02.2018.
