@@ -13,6 +13,7 @@ import com.erizo.testapp.R;
 
 public class ClassWork1Activity extends AppCompatActivity {
 
+    private static final String KEY_TEXT = "KEY_TEXT";
     private final static String TAG = ClassWork1Activity.class.getSimpleName();
 
     @Override
@@ -20,6 +21,8 @@ public class ClassWork1Activity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.class_work_1_activity);
         Log.e(TAG, "onCreate");
+        String text = getIntent().getStringExtra(KEY_TEXT);
+        Log.e(TAG, text);
     }
 
     @Override

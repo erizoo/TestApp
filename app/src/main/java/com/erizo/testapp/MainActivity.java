@@ -6,9 +6,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 
-import com.erizo.testapp.R;
-
-import adapters.RecyclerAdapter;
+import com.erizo.testapp.adapters.RecyclerAdapter;
 
 /**
  * Created by Erizo on 07.02.2018.

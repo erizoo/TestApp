@@ -1,4 +1,4 @@
-package adapters;
+package com.erizo.testapp.adapters;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
