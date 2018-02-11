@@ -1,5 +1,6 @@
 package com.erizo.testapp.hw2;
 
+import android.graphics.Color;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
@@ -16,5 +17,6 @@ public class HomeWork2Activity extends AppCompatActivity {
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.home_work_2_activity);
+        getWindow().getDecorView().setBackgroundColor(Color.LTGRAY);
     }
 }

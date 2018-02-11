@@ -18,9 +18,8 @@
         </activity>
         <activity android:name=".hw1.HomeWork1Activity"  android:parentActivityName=".MainActivity"/>
         <!--noHistory не сохраняет Активити в историю-->
-        <activity android:name=".hw2.HomeWork2Activity"  android:parentActivityName=".MainActivity" />
+        <activity android:name=".hw2.HomeWork2Activity"  android:parentActivityName=".MainActivity" android:screenOrientation="locked"/>
         <activity android:name=".cw1.ClassWork1Activity"/>
-        <activity android:name=".cw2.ClassWork2Activity"/>
     </application>
 </manifest>
 
