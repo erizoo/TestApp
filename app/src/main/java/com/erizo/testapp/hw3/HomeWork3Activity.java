@@ -20,6 +20,8 @@ import com.erizo.testapp.R;
 
 public class HomeWork3Activity extends AppCompatActivity {
 
+    private static final String URL_ROUND_PICTURE = "https://cloud.netlifyusercontent.com/assets/344dbf88-fdf9-42bb-adb4-46f01eedd629/68dd54ca-60cf-4ef7-898b-26d7cbe48ec7/10-dithering-opt.jpg";
+
     private Button takePictureButton, takeRoundPictureButton;
     private EditText editTextUrl;
     private ImageView imageView;
@@ -48,12 +50,11 @@ public class HomeWork3Activity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Glide.with(HomeWork3Activity.this)
-                        .load("https://cloud.netlifyusercontent.com/assets/344dbf88-fdf9-42bb-adb4-46f01eedd629/68dd54ca-60cf-4ef7-898b-26d7cbe48ec7/10-dithering-opt.jpg")
+                        .load(URL_ROUND_PICTURE)
                         .apply(RequestOptions.circleCropTransform()).into(imageView);
-                textViewForBuild.setText(BuildConfig.API_ENDPOINT);
+                textViewForBuild.setText(BuildConfig.API_ENDPOINT_TWO);
             }
         });
-
 
     }
 }
