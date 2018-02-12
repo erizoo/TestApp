@@ -11,6 +11,7 @@ import android.widget.Button;
 import com.erizo.testapp.R;
 import com.erizo.testapp.hw1.HomeWork1Activity;
 import com.erizo.testapp.hw2.HomeWork2Activity;
+import com.erizo.testapp.hw3.HomeWork3Activity;
 
 /**
  * Created by Erizo on 07.02.2018.
@@ -40,6 +41,10 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.ViewHo
                         case 1:
                             Intent intent1 = new Intent(v.getContext(), HomeWork2Activity.class);
                             v.getContext().startActivity(intent1);
+                            break;
+                        case 2:
+                            Intent intent2 = new Intent(v.getContext(), HomeWork3Activity.class);
+                            v.getContext().startActivity(intent2);
                             break;
                         default:
                             break;

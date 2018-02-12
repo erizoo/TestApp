@@ -7,6 +7,7 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 
 import com.erizo.testapp.adapters.RecyclerAdapter;
+import com.squareup.leakcanary.LeakCanary;
 
 /**
  * Created by Erizo on 07.02.2018.
@@ -37,8 +38,8 @@ public class MainActivity extends AppCompatActivity {
 
     private String[] getDataSet() {
 
-        String[] mDataSet = new String[2];
-        for (int i = 0; i < 2; i++) {
+        String[] mDataSet = new String[3];
+        for (int i = 0; i < 3; i++) {
             mDataSet[i] = "item" + i;
         }
         return mDataSet;
