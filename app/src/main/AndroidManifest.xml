@@ -22,7 +22,15 @@
         <activity android:name=".hw2.HomeWork2Activity"  android:parentActivityName=".MainActivity" android:screenOrientation="locked"/>
         <activity android:name=".cw1.ClassWork1Activity" android:screenOrientation="locked"/>
         <activity android:name=".cw3.ClassWork3Activity" android:screenOrientation="locked"/>
+        <activity android:name=".cw4.ClassWork4Activity" android:screenOrientation="locked">
+
+        </activity>
         <activity android:name=".hw3.HomeWork3Activity" android:screenOrientation="locked"/>
+        <activity android:name=".hw4.HomeWork4Activity" android:screenOrientation="locked"/>
+        <activity android:name=".hw4.OwlActivity" android:screenOrientation="locked"/>
+        <activity android:name=".hw4.ClockActivity" android:screenOrientation="locked"/>
+
+
     </application>
 </manifest>
 
