@@ -14,6 +14,7 @@ import com.erizo.testapp.hw1.HomeWork1Activity;
 import com.erizo.testapp.hw2.HomeWork2Activity;
 import com.erizo.testapp.hw3.HomeWork3Activity;
 import com.erizo.testapp.hw4.HomeWork4Activity;
+import com.erizo.testapp.hw5.HomeWork5Activity;
 
 /**
  * Created by Erizo on 07.02.2018.
@@ -53,7 +54,7 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.ViewHo
                             v.getContext().startActivity(intent3);
                             break;
                         case 4:
-                            Intent intent4 = new Intent(v.getContext(), HomeWork4Activity.class);
+                            Intent intent4 = new Intent(v.getContext(), HomeWork5Activity.class);
                             v.getContext().startActivity(intent4);
                             break;
                         default:
