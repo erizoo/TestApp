@@ -1,35 +1,29 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
+<RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
     android:orientation="vertical">
+
+
     <Button
-        android:id="@+id/btnStart"
-        android:layout_width="wrap_content"
+        style="@style/buttonsStyle"
+        android:id="@+id/button7"
+        android:layout_width="150dp"
         android:layout_height="wrap_content"
-        android:onClick="onClickStart"
-        android:text="btnStart">
-    </Button>
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="172dp"
+        android:text="Включить Wi-fi" />
+
     <Button
-        android:id="@+id/btnStop"
-        android:layout_width="wrap_content"
+        style="@style/buttonsStyle"
+        android:id="@+id/button8"
+        android:layout_width="150dp"
         android:layout_height="wrap_content"
-        android:onClick="onClickStop"
-        android:text="btnStop">
-    </Button>
-    <Button
-        android:id="@+id/btnBind"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:onClick="onClickBind"
-        android:text="btnBind">
-    </Button>
-    <Button
-        android:id="@+id/btnUnBind"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:onClick="onClickUnBind"
-        android:text="btnUnBind">
-    </Button>
-</LinearLayout>
+        android:layout_alignStart="@+id/button7"
+        android:layout_below="@+id/button7"
+        android:layout_marginTop="50dp"
+        android:text="Отключить Wi-fi" />
+</RelativeLayout>

@@ -10,6 +10,7 @@ import android.widget.Button;
 
 import com.erizo.testapp.R;
 import com.erizo.testapp.cw4.ClassWork4Activity;
+import com.erizo.testapp.cw6.ClassWork6Activity;
 import com.erizo.testapp.hw1.HomeWork1Activity;
 import com.erizo.testapp.hw2.HomeWork2Activity;
 import com.erizo.testapp.hw3.HomeWork3Activity;

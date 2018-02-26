@@ -5,6 +5,7 @@
     <uses-permission android:name="android.permission.INTERNET"/>
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE"/>
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -24,7 +25,8 @@
         <activity android:name=".hw2.HomeWork2Activity"  android:parentActivityName=".MainActivity" android:screenOrientation="locked"/>
         <activity android:name=".cw1.ClassWork1Activity" android:screenOrientation="locked"/>
         <activity android:name=".cw3.ClassWork3Activity" android:screenOrientation="locked"/>
-        <activity android:name=".cw4.ClassWork4Activity" android:screenOrientation="locked">
+        <activity android:name=".cw4.ClassWork4Activity" android:screenOrientation="locked"/>
+        <activity android:name=".cw6.ClassWork6Activity" android:screenOrientation="locked">
 
         </activity>
         <activity android:name=".hw3.HomeWork3Activity" android:screenOrientation="locked"/>
