@@ -3,9 +3,12 @@
     package="com.erizo.testapp">
 
     <uses-permission android:name="android.permission.INTERNET"/>
-    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
+    <uses-permission android:name="android.permission.UPDATE_DEVICE_STATS"
+        tools:ignore="ProtectedPermissions" />
     <uses-permission android:name="android.permission.CHANGE_WIFI_STATE"/>
+    <uses-permission android:name="android.permission.WAKE_LOCK"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -34,6 +37,7 @@
         <activity android:name=".hw4.OwlActivity" android:screenOrientation="locked"/>
         <activity android:name=".hw4.ClockActivity" android:screenOrientation="locked"/>
         <activity android:name=".hw5.HomeWork5Activity" android:screenOrientation="locked"/>
+        <activity android:name=".hw6.HomeWork6Activity" android:screenOrientation="locked"/>
         <service android:enabled="true" android:name=".hw5.MyService" />
 
     </application>

@@ -11,6 +11,8 @@ import android.net.ConnectivityManager;
 import android.os.Bundle;
 import android.os.IBinder;
 import android.support.annotation.Nullable;
+import android.support.design.widget.CoordinatorLayout;
+import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
@@ -27,6 +29,7 @@ import com.erizo.testapp.R;
 public class HomeWork5Activity extends AppCompatActivity {
 
     private static final String TAG_NAME = HomeWork5Activity.class.getSimpleName();
+    private CoordinatorLayout coordinatorLayout;
 
     private ServiceConnection sConn;
     private MyService service;
@@ -39,6 +42,8 @@ public class HomeWork5Activity extends AppCompatActivity {
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.home_work_5_activity);
+
+        coordinatorLayout =  findViewById(R.id.coordinatorLayout);
 
         turnOn = findViewById(R.id.button7);
         turnOff = findViewById(R.id.button8);
@@ -104,10 +109,10 @@ public class HomeWork5Activity extends AppCompatActivity {
                     ConnectivityManager.EXTRA_NO_CONNECTIVITY, false);
 
             if (!noConnectivity) {
-                Toast.makeText(getApplicationContext(), "Wifi - включен!", Toast.LENGTH_SHORT).show();
+                Snackbar.make(coordinatorLayout, "Wifi - включен!", Snackbar.LENGTH_LONG).show();
                 Log.d("NetworkCheckReceiver", "connected");
             } else {
-                Toast.makeText(getApplicationContext(), "Wifi - выключен!", Toast.LENGTH_SHORT).show();
+                Snackbar.make(coordinatorLayout, "Wifi - выключен!", Snackbar.LENGTH_LONG).show();
                 Log.d("NetworkCheckReceiver", "disconnected");
             }
         }
