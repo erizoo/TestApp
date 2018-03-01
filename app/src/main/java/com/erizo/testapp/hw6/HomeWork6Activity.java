@@ -6,6 +6,8 @@ import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.widget.SearchView;
+
 
 import com.erizo.testapp.R;
 import com.erizo.testapp.adapters.JsonAdapter;
@@ -28,6 +30,8 @@ public class HomeWork6Activity extends AppCompatActivity {
     private RecyclerView.Adapter mAdapter;
     private RecyclerView.LayoutManager mLayoutManager;
     private JsonTest jsonTest;
+    private JsonAdapter jsonAdapter;
+    private SearchView searchView;
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
@@ -37,13 +41,28 @@ public class HomeWork6Activity extends AppCompatActivity {
         List<People> list = getListPeople();
         mRecyclerView = findViewById(R.id.json_recycler_view);
 
+        searchView = findViewById(R.id.search_view);
+
         // используем linear layout manager
         mLayoutManager = new LinearLayoutManager(this);
         mRecyclerView.setLayoutManager(mLayoutManager);
         // создаем адаптер
-        mAdapter = new JsonAdapter(list);
-        mRecyclerView.setAdapter(mAdapter);
+        jsonAdapter = new JsonAdapter(list);
+        mRecyclerView.setAdapter(jsonAdapter);
 
+        searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+            @Override
+            public boolean onQueryTextSubmit(String query) {
+                jsonAdapter.filter(query);
+                return true;
+            }
+
+            @Override
+            public boolean onQueryTextChange(String newText) {
+                jsonAdapter.filter(newText);
+                return true;
+            }
+        });
     }
 
     private List<People> getListPeople() {
