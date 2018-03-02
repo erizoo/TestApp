@@ -17,6 +17,7 @@ import com.erizo.testapp.hw3.HomeWork3Activity;
 import com.erizo.testapp.hw4.HomeWork4Activity;
 import com.erizo.testapp.hw5.HomeWork5Activity;
 import com.erizo.testapp.hw6.HomeWork6Activity;
+import com.erizo.testapp.hw7.HomeWork7Activity;
 
 /**
  * Created by Erizo on 07.02.2018.
@@ -34,40 +35,41 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.ViewHo
         public ViewHolder(View v) {
             super(v);
             buttonForActivity = v.findViewById(R.id.button_for_activity);
-            buttonForActivity.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    int count = getAdapterPosition();
-                    switch (count) {
-                        case 0:
-                            Intent intent = new Intent(v.getContext(), HomeWork1Activity.class);
-                            v.getContext().startActivity(intent);
-                            break;
-                        case 1:
-                            Intent intent1 = new Intent(v.getContext(), HomeWork2Activity.class);
-                            v.getContext().startActivity(intent1);
-                            break;
-                        case 2:
-                            Intent intent2 = new Intent(v.getContext(), HomeWork3Activity.class);
-                            v.getContext().startActivity(intent2);
-                            break;
-                        case 3:
-                            Intent intent3 = new Intent(v.getContext(), HomeWork4Activity.class);
-                            v.getContext().startActivity(intent3);
-                            break;
-                        case 4:
-                            Intent intent4 = new Intent(v.getContext(), HomeWork5Activity.class);
-                            v.getContext().startActivity(intent4);
-                            break;
-                        case 5:
-                            Intent intent5 = new Intent(v.getContext(), HomeWork6Activity.class);
-                            v.getContext().startActivity(intent5);
-                            break;
-                        default:
-                            break;
-                    }
-
+            buttonForActivity.setOnClickListener(v1 -> {
+                int count = getAdapterPosition();
+                switch (count) {
+                    case 0:
+                        Intent intent = new Intent(v1.getContext(), HomeWork1Activity.class);
+                        v1.getContext().startActivity(intent);
+                        break;
+                    case 1:
+                        Intent intent1 = new Intent(v1.getContext(), HomeWork2Activity.class);
+                        v1.getContext().startActivity(intent1);
+                        break;
+                    case 2:
+                        Intent intent2 = new Intent(v1.getContext(), HomeWork3Activity.class);
+                        v1.getContext().startActivity(intent2);
+                        break;
+                    case 3:
+                        Intent intent3 = new Intent(v1.getContext(), HomeWork4Activity.class);
+                        v1.getContext().startActivity(intent3);
+                        break;
+                    case 4:
+                        Intent intent4 = new Intent(v1.getContext(), HomeWork5Activity.class);
+                        v1.getContext().startActivity(intent4);
+                        break;
+                    case 5:
+                        Intent intent5 = new Intent(v1.getContext(), HomeWork6Activity.class);
+                        v1.getContext().startActivity(intent5);
+                        break;
+                    case 6:
+                        Intent intent6 = new Intent(v1.getContext(), HomeWork7Activity.class);
+                        v1.getContext().startActivity(intent6);
+                        break;
+                    default:
+                        break;
                 }
+
             });
         }
     }

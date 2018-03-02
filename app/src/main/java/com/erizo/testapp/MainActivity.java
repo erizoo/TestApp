@@ -38,8 +38,8 @@ public class MainActivity extends AppCompatActivity {
 
     private String[] getDataSet() {
 
-        String[] mDataSet = new String[6];
-        for (int i = 0; i < 6; i++) {
+        String[] mDataSet = new String[7];
+        for (int i = 0; i < 7; i++) {
             mDataSet[i] = "item" + i;
         }
         return mDataSet;
