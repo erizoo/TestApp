@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">TestApp</string>
+    <string name="button_start">Click me!</string>
+    <string name="first_text_view">Первый текст!</string>
+    <string name="second_text_view">Второй текст!</string>
+    <string name="button1">Кнопка №1</string>
+    <string name="button2">Кнопка №2</string>
+    <string name="takePictureButton">Загрузить картинку</string>
+    <string name="url_for_edit_Text">http://pcrentgen.ru/wp-content/uploads/2017/02/ANDROID.png</string>
+    <string name="buttonRound">Загрузить круглую картинку</string>
+</resources>
