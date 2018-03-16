@@ -38,22 +38,16 @@ public class HomeWork3Activity extends AppCompatActivity {
 
         takePictureButton = findViewById(R.id.take_picture_button);
         takeRoundPictureButton = findViewById(R.id.take_picture_round_button);
-        takePictureButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Glide.with(HomeWork3Activity.this).load(editTextUrl.getText().toString()).into(imageView);
-                textViewForBuild.setText(BuildConfig.API_ENDPOINT);
-            }
+        takePictureButton.setOnClickListener(v -> {
+            Glide.with(HomeWork3Activity.this).load(editTextUrl.getText().toString()).into(imageView);
+            textViewForBuild.setText(BuildConfig.API_ENDPOINT);
         });
 
-        takeRoundPictureButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Glide.with(HomeWork3Activity.this)
-                        .load(URL_ROUND_PICTURE)
-                        .apply(RequestOptions.circleCropTransform()).into(imageView);
-                textViewForBuild.setText(BuildConfig.API_ENDPOINT_TWO);
-            }
+        takeRoundPictureButton.setOnClickListener(v -> {
+            Glide.with(HomeWork3Activity.this)
+                    .load(URL_ROUND_PICTURE)
+                    .apply(RequestOptions.circleCropTransform()).into(imageView);
+            textViewForBuild.setText(BuildConfig.API_ENDPOINT_TWO);
         });
 
     }

@@ -20,20 +20,19 @@ public class OwlActivity extends AppCompatActivity {
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.home_work_owl_activity);
-        final int []imageArray={R.drawable.sova_anmation_2,
+        final int[] imageArray = {R.drawable.sova_anmation_2,
                 R.drawable.sova_anmation_3,
                 R.drawable.sova_anmation_1};
 
         imageView1 = findViewById(R.id.imageView2);
         final Handler handler = new Handler();
         Runnable runnable = new Runnable() {
-            int i=0;
+            int i = 0;
             public void run() {
                 imageView1.setImageResource(imageArray[i]);
                 i++;
-                if(i>imageArray.length-1)
-                {
-                    i=0;
+                if (i > imageArray.length - 1) {
+                    i = 0;
                 }
                 handler.postDelayed(this, 300);
             }

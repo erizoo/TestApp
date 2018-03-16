@@ -25,21 +25,15 @@ public class HomeWork4Activity extends AppCompatActivity {
 
         button = findViewById(R.id.button4);
         buttonClock = findViewById(R.id.button5);
-        button.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(HomeWork4Activity.this, OwlActivity.class);
-                startActivity(intent);
-                overridePendingTransition(R.anim.slide_in,R.anim.slide_out);
-            }
+        button.setOnClickListener(v -> {
+            Intent intent = new Intent(HomeWork4Activity.this, OwlActivity.class);
+            startActivity(intent);
+            overridePendingTransition(R.anim.slide_in,R.anim.slide_out);
         });
-        buttonClock.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(HomeWork4Activity.this, ClockActivity.class);
-                startActivity(intent);
-                overridePendingTransition(R.anim.slide_in,R.anim.slide_out);
-            }
+        buttonClock.setOnClickListener(v -> {
+            Intent intent = new Intent(HomeWork4Activity.this, ClockActivity.class);
+            startActivity(intent);
+            overridePendingTransition(R.anim.slide_in,R.anim.slide_out);
         });
 
 

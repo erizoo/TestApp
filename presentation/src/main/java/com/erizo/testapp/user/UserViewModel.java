@@ -7,6 +7,7 @@ import android.util.Log;
 
 import com.erizo.testapp.base.BaseViewModel;
 import com.erizo.testapp.base.GetUserUseCase;
+import com.erizo.testapp.executor.UIThread;
 
 import entity.UserEntity;
 import io.reactivex.Observable;
@@ -22,7 +23,7 @@ import io.reactivex.schedulers.Schedulers;
 
 public class UserViewModel extends BaseViewModel {
 
-    private GetUserUseCase getUserByIdUSeCase = new GetUserUseCase();
+    private GetUserUseCase getUserByIdUSeCase = new GetUserUseCase(new UIThread());
 
     public ObservableField<String> userName = new ObservableField<>("");
     public ObservableField<String> profileUrl = new ObservableField<>("");
