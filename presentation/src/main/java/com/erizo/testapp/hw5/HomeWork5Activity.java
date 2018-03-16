@@ -19,6 +19,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -31,90 +32,63 @@ import com.erizo.testapp.R;
 public class HomeWork5Activity extends AppCompatActivity {
 
     private static final String TAG_NAME = HomeWork5Activity.class.getSimpleName();
-    private CoordinatorLayout coordinatorLayout;
-
-    private ServiceConnection sConn;
-    private MyService service;
+    private WifiManager manager;
+    private Button changeWifiStateButton;
+    private ServiceConnection connection;
     private boolean bound = false;
-    private Intent intent;
-    private Button turnOn;
-    private Button turnOff;
+    private MyService.MyBinder binder;
+    private BroadcastReceiver receiver;
+
 
     @Override
-    public void onCreate(@Nullable Bundle savedInstanceState) {
+    protected void onDestroy() {
+        super.onDestroy();
+        if (bound) {
+            unbindService(connection);
+        }
+        bound = false;
+        unregisterReceiver(receiver);
+    }
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.home_work_5_activity);
-
-        coordinatorLayout =  findViewById(R.id.coordinatorLayout);
-
-        turnOn = findViewById(R.id.button7);
-        turnOff = findViewById(R.id.button8);
-
-        sConn = new ServiceConnection() {
-            public void onServiceConnected(ComponentName name, IBinder binder) {
-                Log.d(TAG_NAME, "HomeWork5Activity onServiceConnected");
-                service = ((MyService.MyBinder) binder).getService();
+        manager = (WifiManager) getApplicationContext().getSystemService(WIFI_SERVICE);
+        receiver = new BroadcastReceiver() {
+            @Override
+            public void onReceive(Context context, Intent intent) {
+                checkWiFi();
+            }
+        };
+        registerReceiver(receiver, new IntentFilter("android.net.wifi.WIFI_STATE_CHANGED"));
+        connection = new ServiceConnection() {
+            @Override
+            public void onServiceConnected(ComponentName name, IBinder service) {
+                binder = (MyService.MyBinder) service;
                 bound = true;
             }
 
+            @Override
             public void onServiceDisconnected(ComponentName name) {
-                Log.d(TAG_NAME, "HomeWork5Activity onServiceDisconnected");
                 bound = false;
             }
         };
-
-        intent = new Intent(getApplicationContext(), MyService.class);
-        bindService(intent, sConn, BIND_AUTO_CREATE);
-        startService(intent);
-
-        turnOn.setOnClickListener(v -> service.turnOnWiFi());
-        turnOff.setOnClickListener(v -> service.turnOfWiFi());
-    }
-
-    @Override
-    protected void onResume() {
-        super.onResume();
-        IntentFilter intentFilter = new IntentFilter();
-        intentFilter.addAction(
-                WifiManager.NETWORK_STATE_CHANGED_ACTION);
-        registerReceiver(networkCheckReceiver, intentFilter);
-    }
-
-    @Override
-    protected void onStop() {
-        super.onStop();
-        stopService(intent);
-//        unbindService(sConn);
-    }
-
-    @Override
-    protected void onPause() {
-        super.onPause();
-        unregisterReceiver(networkCheckReceiver);
-    }
-
-    private BroadcastReceiver networkCheckReceiver = new BroadcastReceiver() {
-
-        @Override
-        public void onReceive(Context context, Intent intent) {
-            final String action = intent.getAction();
-            if (action.equals(WifiManager.SUPPLICANT_CONNECTION_CHANGE_ACTION)) {
-                if (intent.getBooleanExtra(WifiManager.EXTRA_SUPPLICANT_CONNECTED, false)){
-                    Snackbar.make(coordinatorLayout, "Wifi - выключен!", Snackbar.LENGTH_LONG).show();
-                    Log.d("NetworkCheckReceiver", "disconnected");
-                } else {
-                    Snackbar.make(coordinatorLayout, "Wifi - включен!", Snackbar.LENGTH_LONG).show();
-                    Log.d("NetworkCheckReceiver", "connected");
-                }
+        bindService(new Intent(this, MyService.class), connection, BIND_AUTO_CREATE);
+        changeWifiStateButton = findViewById(R.id.button7);
+        changeWifiStateButton.setOnClickListener(v -> {
+            if (bound) {
+                binder.getService().changeWiFiState();
             }
+        });
+        checkWiFi();
+    }
 
+    public void checkWiFi() {
+        if (manager.isWifiEnabled()) {
+            changeWifiStateButton.setText("Выключить Wi-fi");
+        } else {
+            changeWifiStateButton.setText("Включить Wi-fi");
         }
-    };
-
-    protected void onDestroy() {
-        super.onDestroy();
-        if (!bound) return;
-        unbindService(sConn);
-        bound = false;
     }
 }

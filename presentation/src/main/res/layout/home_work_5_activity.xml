@@ -22,14 +22,5 @@
         android:layout_marginTop="172dp"
         android:text="Включить Wi-fi" />
 
-    <Button
-        style="@style/buttonsStyle"
-        android:id="@+id/button8"
-        android:layout_width="150dp"
-        android:layout_height="wrap_content"
-        android:layout_alignStart="@+id/button7"
-        android:layout_below="@+id/button7"
-        android:layout_marginTop="50dp"
-        android:text="Отключить Wi-fi" />
 </RelativeLayout>
 </android.support.design.widget.CoordinatorLayout>

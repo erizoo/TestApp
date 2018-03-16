@@ -26,20 +26,16 @@
         <activity android:name=".hw1.HomeWork1Activity"  android:parentActivityName=".MainActivity"/>
         <!--noHistory не сохраняет Активити в историю-->
         <activity android:name=".hw2.HomeWork2Activity"  android:parentActivityName=".MainActivity" android:screenOrientation="locked"/>
-        <activity android:name=".cw1.ClassWork1Activity" android:screenOrientation="locked"/>
-        <activity android:name=".cw3.ClassWork3Activity" android:screenOrientation="locked"/>
-        <activity android:name=".cw4.ClassWork4Activity" android:screenOrientation="locked"/>
-        <activity android:name=".cw6.ClassWork6Activity" android:screenOrientation="locked">
-
-        </activity>
         <activity android:name=".hw3.HomeWork3Activity" android:screenOrientation="locked"/>
-        <activity android:name=".hw4.HomeWork4Activity" android:screenOrientation="docked"/>
+        <activity android:name=".hw4.HomeWork4Activity" android:screenOrientation="locked"/>
         <activity android:name=".hw4.OwlActivity" android:screenOrientation="locked"/>
         <activity android:name=".hw4.ClockActivity" android:screenOrientation="locked"/>
         <activity android:name=".hw5.HomeWork5Activity" android:screenOrientation="locked"/>
         <activity android:name=".hw6.HomeWork6Activity" android:screenOrientation="locked"/>
         <activity android:name=".hw7.HomeWork7Activity" android:screenOrientation="locked"/>
+        <activity android:name=".hw8.HomeWork8Activity" android:screenOrientation="locked"/>
         <service android:enabled="true" android:name=".hw5.MyService" />
+        <activity android:name=".user.DataBinding"/>
 
     </application>
 </manifest>

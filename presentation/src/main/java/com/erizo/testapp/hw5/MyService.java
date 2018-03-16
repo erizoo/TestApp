@@ -16,51 +16,30 @@ import android.util.Log;
 public class MyService extends Service {
 
     private static final String LOG_TAG = MyService.class.getSimpleName();
-    MyBinder binder = new MyBinder();
+    private MyBinder binder;
+    private WifiManager manager;
 
+    public MyService() {
+    }
+
+    @Override
     public void onCreate() {
         super.onCreate();
-        Log.d(LOG_TAG, "MyService onCreate");
+        manager = (WifiManager) getApplicationContext().getSystemService(WIFI_SERVICE);
     }
 
-    public void turnOnWiFi(){
-        WifiManager wifiManager = (WifiManager) this.getSystemService(Context.WIFI_SERVICE);
-        assert wifiManager != null;
-        Log.d(LOG_TAG, "включил");
-        wifiManager.setWifiEnabled(true);
+    public void changeWiFiState() {
+        manager.setWifiEnabled(!manager.isWifiEnabled());
     }
 
-    public void turnOfWiFi(){
-        WifiManager wifiManager = (WifiManager) this.getSystemService(Context.WIFI_SERVICE);
-        assert wifiManager != null;
-        Log.d(LOG_TAG, "выключил");
-        wifiManager.setWifiEnabled(false);
-    }
-
+    @Override
     public IBinder onBind(Intent intent) {
-        Log.d(LOG_TAG, "MyService onBind");
+        binder = new MyBinder();
         return binder;
     }
 
-    public void onRebind(Intent intent) {
-        super.onRebind(intent);
-        Log.d(LOG_TAG, "MyService onRebind");
-    }
-
-    public boolean onUnbind(Intent intent) {
-        Log.d(LOG_TAG, "MyService onUnbind");
-        return super.onUnbind(intent);
-    }
-
-
-
-    public void onDestroy() {
-        super.onDestroy();
-        Log.d(LOG_TAG, "MyService onDestroy");
-    }
-
-    class MyBinder extends Binder {
-        MyService getService() {
+    public class MyBinder extends Binder {
+        public MyService getService() {
             return MyService.this;
         }
     }

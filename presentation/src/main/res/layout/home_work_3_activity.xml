@@ -52,6 +52,6 @@
         android:layout_below="@+id/take_picture_button"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="14dp"
-        android:text="@string/buttonRound" />
+        android:text="@string/buttonRound" />
 
 </RelativeLayout>

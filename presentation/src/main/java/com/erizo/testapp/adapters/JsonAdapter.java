@@ -68,7 +68,7 @@ public class JsonAdapter extends RecyclerView.Adapter<JsonAdapter.ViewHolder> {
             @Override
             public void run() {
                 filterList.clear();
-                if (TextUtils.isEepty(text)) {
+                if (TextUtils.isEmpty(text)) {
                     filterList.addAll(peopleList);
                 } else {
                     for (People item : peopleList) {

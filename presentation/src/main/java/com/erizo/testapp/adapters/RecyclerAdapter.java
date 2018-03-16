@@ -9,8 +9,6 @@ import android.view.ViewGroup;
 import android.widget.Button;
 
 import com.erizo.testapp.R;
-import com.erizo.testapp.cw4.ClassWork4Activity;
-import com.erizo.testapp.cw6.ClassWork6Activity;
 import com.erizo.testapp.hw1.HomeWork1Activity;
 import com.erizo.testapp.hw2.HomeWork2Activity;
 import com.erizo.testapp.hw3.HomeWork3Activity;
@@ -18,6 +16,8 @@ import com.erizo.testapp.hw4.HomeWork4Activity;
 import com.erizo.testapp.hw5.HomeWork5Activity;
 import com.erizo.testapp.hw6.HomeWork6Activity;
 import com.erizo.testapp.hw7.HomeWork7Activity;
+import com.erizo.testapp.hw8.HomeWork8Activity;
+import com.erizo.testapp.user.DataBinding;
 
 /**
  * Created by Erizo on 07.02.2018.
@@ -65,6 +65,14 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.ViewHo
                     case 6:
                         Intent intent6 = new Intent(v1.getContext(), HomeWork7Activity.class);
                         v1.getContext().startActivity(intent6);
+                        break;
+                    case 7:
+                        Intent intent7 = new Intent(v1.getContext(), HomeWork8Activity.class);
+                        v1.getContext().startActivity(intent7);
+                        break;
+                    case 8:
+                        Intent intent8 = new Intent(v1.getContext(), DataBinding.class);
+                        v1.getContext().startActivity(intent8);
                         break;
                     default:
                         break;

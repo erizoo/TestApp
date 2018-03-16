@@ -1,20 +1,14 @@
 package com.erizo.testapp.hw7;
 
 import android.os.Bundle;
-import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
-import android.util.Log;
 import android.view.View;
-import android.widget.TextView;
 
 import com.erizo.testapp.R;
-import com.erizo.testapp.cw6.OneFragment;
-import com.erizo.testapp.cw6.TwoFragment;
 
-import io.reactivex.Observable;
 import io.reactivex.subjects.PublishSubject;
 
 /**
@@ -25,29 +19,43 @@ public class HomeWork7Activity extends AppCompatActivity implements PublicSubjec
 
     private static final String TAG = HomeWork7Activity.class.getSimpleName();
 
-    private PublishSubject<Integer> subject = PublishSubject.create();
-    private int count = 0;
+    private static final String KEY_COUNTER = "COUNTER";
+    private PublishSubject<Integer> publishSubject;
+    private Integer counter = 0;
+    private Fragment fragment;
 
     @Override
-    public void onCreate(@Nullable Bundle savedInstanceState) {
+    protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.home_work_7_activity);
-
-        findViewById(R.id.buttonFragmentRx).setOnClickListener(v -> goSubject());
-    }
-
-    private void goSubject() {
-        Log.d(TAG, String.valueOf(count));
-        count++;
-        subject.onNext(count);
-
-        FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
-        transaction.replace(R.id.containerRx, FirstFragment.getInstance());
-        transaction.commit();
+        View view = findViewById(R.id.buttonFragmentRx);
+        view.setOnClickListener(v -> {
+            counter++;
+            publishSubject.onNext(counter);
+        });
+        publishSubject = PublishSubject.create();
+        FragmentManager manager = getSupportFragmentManager();
+        fragment = manager.findFragmentById(R.id.container);
+        if (manager.findFragmentById(R.id.container) == null) {
+            fragment = FirstFragment.getInstance();
+            FragmentTransaction ft = manager.beginTransaction();
+            ft.replace(R.id.containerRx, fragment);
+            ft.commit();
+        }
+        if (savedInstanceState != null) {
+            counter = savedInstanceState.getInt(KEY_COUNTER);
+        }
     }
 
     @Override
-    public Observable<Integer> getObservable() {
-        return subject;
+    protected void onSaveInstanceState(Bundle outState) {
+        super.onSaveInstanceState(outState);
+        outState.putInt(KEY_COUNTER, counter);
+    }
+
+
+    @Override
+    public PublishSubject<Integer> getObservable() {
+        return publishSubject;
     }
 }

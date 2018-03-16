@@ -16,6 +16,42 @@ buildscript {
     }
 }
 
+ext{
+    compileSdkVersion = 27
+    minSdkVersion = 18
+    targetSdkVersion = 27
+
+    archComponentVersion = '1.1.0'
+    buildToolsSdkVersion = '27.1.0'
+    rxjava2AndroidVerson = '2.0.2'
+    rxjava2Verson = '2.1.10'
+    gsonVersion = '2.8.2'
+    dataBindingVersion = '3.0.0'
+    glide = '4.6.1'
+
+//это массив библиотек
+    dependencies = [
+            supportAppcompat: "com.android.support:appcompat-v7:$buildToolsSdkVersion",
+            supportDesign: "com.android.support:design:$buildToolsSdkVersion",
+            supportV4: "com.android.support:support-v4:$buildToolsSdkVersion",
+
+            rxjava2Android: "io.reactivex.rxjava2:rxandroid:$rxjava2AndroidVerson",
+            rxjava2: "io.reactivex.rxjava2:rxjava:$rxjava2Verson",
+
+            gson: "com.google.code.gson:gson:$gsonVersion",
+
+            glide: "com.github.bumptech.glide:glide:$glide",
+            glideCompiler: "com.github.bumptech.glide:compiler:$glide",
+
+            recyclerview: "com.android.support:recyclerview-v7:$buildToolsSdkVersion",
+            //с этой библиотекой xml знает о активити(подписыватся на изменения активити)
+            androidBindingCompiler: "com.android.databinding:compiler:$dataBindingVersion",
+            archComponentsExtensions: "android.arch.lifecycle:extensions:$archComponentVersion",
+            archComponents: "android.arch.lifecycle:compiler:$archComponentVersion",
+    ]
+
+}
+
 allprojects {
     repositories {
         google()

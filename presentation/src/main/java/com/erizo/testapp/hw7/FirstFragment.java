@@ -24,65 +24,63 @@ public class FirstFragment extends Fragment {
 
     private static final String TAG = FirstFragment.class.getSimpleName();
 
-    private TextView textView;
-
-    private PublicSubjectContract publicSubjectContract;
+    public static final String KEY_COUNTER = "COUNTER";
+    private TextView consumerTextView;
+    private PublicSubjectContract contract;
     private Disposable disposable;
 
-    public static FirstFragment getInstance() {
-        return new FirstFragment();
+    public FirstFragment() {
+        // Required empty public constructor
     }
 
-    @Nullable
+
     @Override
-    public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        return getLayoutInflater().inflate(R.layout.two_fragment, container, false);
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+        // Inflate the layout for this fragment
+        View v = inflater.inflate(R.layout.two_fragment, container, false);
+        consumerTextView = v.findViewById(R.id.textView);
+        return v;
     }
 
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
-        textView = view.findViewById(R.id.textView);
-        view.setOnClickListener(v -> {subscribe();
-        });
         super.onViewCreated(view, savedInstanceState);
+        if (savedInstanceState != null) {
+            consumerTextView.setText(savedInstanceState.getString(KEY_COUNTER));
+        }
     }
 
     @Override
-    public void onPause() {
-        if (disposable != null) {
-            disposable.dispose();
-        }
-        super.onPause();
+    public void onSaveInstanceState(@NonNull Bundle outState) {
+        super.onSaveInstanceState(outState);
+        outState.putString(KEY_COUNTER, consumerTextView.getText().toString());
+    }
+
+    public static FirstFragment getInstance() {
+        Bundle bundle = new Bundle();
+        FirstFragment fragment = new FirstFragment();
+        fragment.setArguments(bundle);
+        return fragment;
     }
 
     @Override
     public void onAttach(Context context) {
-        Activity activity = getActivity();
-        if (activity != null) {
-            publicSubjectContract = (PublicSubjectContract) activity;
-        }
         super.onAttach(context);
+        Activity activity = getActivity();
+        if (activity != null && activity instanceof PublicSubjectContract) {
+            contract = (PublicSubjectContract) activity;
+        }
     }
 
     @Override
-    public void onDetach() {
-        super.onDetach();
-        publicSubjectContract = null;
+    public void onPause() {
+        super.onPause();
+        disposable.dispose();
     }
 
-    private void subscribe(){
-        disposable = publicSubjectContract
-                .getObservable()
-                .doOnNext(integer -> {
-                })
-                .map(String::valueOf)
-                .subscribe(integer -> {
-                    Log&d(TAG, String.valueOf(integer));
-                    textView.setText(integer);
-                    // сюда прилетают даные
-                }, throwable -> {
-                    // сюда прилетают ошибки
-                });
+    @Override
+    public void onResume() {
+        super.onResume();
+        disposable = contract.getObservable().map(String::valueOf).subscribe(s -> consumerTextView.setText(s));
     }
-
 }
